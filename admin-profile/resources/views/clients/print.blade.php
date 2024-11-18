@@ -9,6 +9,12 @@
 
 <body>
     <div>
+        <form action="">
+            <input type="file" name="image" id="image">
+            <button type="submit">upload</button>
+        </form>
+    </div>
+    <div>
         <table>
             <thead>
                 <th>Email</th>
@@ -21,7 +27,7 @@
                     <tr>
                         <td>{{ $item->email }}</td>
                         <td>{{ $item->password }}</td>
-                        <td><button type="button">Edit</button></td>
+                        <td><a href="{{ route('edit', $item->id) }}" type="button">Edit</a></td>
                         <td><a href="{{ route('delete', $item->id) }}" type="button">Delete</a></td>
                     </tr>
                 @endforeach

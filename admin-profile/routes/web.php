@@ -19,3 +19,9 @@ Route::get('admin/data', [AuthController::class, 'store']);
 Route::get('table', [AuthController::class, 'tableData']);
 Route::get('print', [AuthController::class, 'printData']);
 Route::get('delete/{id}', [AuthController::class, 'delete'])->name('delete');
+
+
+
+Route::get('edit/{id}', [AuthController::class, 'edit'])->name('edit');
+
+Route::post('update/{id}', [AuthController::class, 'update'])->name('update');
