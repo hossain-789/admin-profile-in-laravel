@@ -13,12 +13,16 @@
             <thead>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Delete</th>
+                <th>edit</th>
             </thead>
             <tbody>
                 @foreach ($data as $item)
                     <tr>
                         <td>{{ $item->email }}</td>
                         <td>{{ $item->password }}</td>
+                        <td><button type="button">Edit</button></td>
+                        <td><a href="{{ route('delete', $item->id) }}" type="button">Delete</a></td>
                     </tr>
                 @endforeach
             </tbody>

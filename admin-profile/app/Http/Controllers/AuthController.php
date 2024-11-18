@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
 
+    public function printData()
+    {
+        $data = profile::all();
+        return view('clients.print', compact('data'));
+    }
+
     public function tableData()
     {
         $data = profile::all();
-        return view(
-            "clients.table",
-            compact("data")
-        );
+        return view("clients.table", compact("data"));
     }
 
 
@@ -31,6 +34,12 @@ class AuthController extends Controller
             'email' => $profile,
             'password' => $request->password,
         ]);
+        return redirect()->back();
+    }
+
+    public function delete($id)
+    {
+        profile::where('id', '=', $id)->delete();
         return redirect()->back();
     }
 }

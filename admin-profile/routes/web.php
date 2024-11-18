@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuthController::class, 'show']);
 Route::get('admin/data', [AuthController::class, 'store']);
 Route::get('table', [AuthController::class, 'tableData']);
+Route::get('print', [AuthController::class, 'printData']);
+Route::get('delete/{id}', [AuthController::class, 'delete'])->name('delete');
